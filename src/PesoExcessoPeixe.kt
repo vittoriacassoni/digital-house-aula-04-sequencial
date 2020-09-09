@@ -13,7 +13,7 @@ fun main(){
     var pesoParametro = 50.0;
     var multaPorQuilo = 4.0;
 
-    var excesso = pesoPeixes % pesoParametro;
+    var excesso = pesoPeixes - pesoParametro;
     var valorMulta = excesso * multaPorQuilo;
 
     println("Excedeu: " + "%.2f".format(excesso));
