@@ -1,3 +1,4 @@
+package basics
 //João Papo-de-Pescador, homem de bem, comprou um microcomputador para controlar o
 //rendimento diário de seu trabalho. Toda vez que ele traz um peso de peixes maior que o
 //estabelecido pelo regulamento de pesca do estado de São Paulo (50 quilos) deve pagar
@@ -8,14 +9,14 @@
 
 fun main(){
     print("Informe o peso dos peixes pescados: ")
-    var pesoPeixes = readLine()!!.toFloat();
+    var weightFishes = readLine()!!.toFloat();
 
-    var pesoParametro = 50.0;
-    var multaPorQuilo = 4.0;
+    var expectedWeight = 50.0;
+    var priceOverweight = 4.0;
 
-    var excesso = pesoPeixes - pesoParametro;
-    var valorMulta = excesso * multaPorQuilo;
+    var overweight = weightFishes - expectedWeight;
+    var paidPrice = overweight * priceOverweight;
 
-    println("Excedeu: " + "%.2f".format(excesso));
-    println("O valor a ser pago é: R$" + "%.2f".format(valorMulta));
+    println("Excedeu: " + "%.2f".format(overweight));
+    println("O valor a ser pago é: R$" + "%.2f".format(paidPrice));
 }
