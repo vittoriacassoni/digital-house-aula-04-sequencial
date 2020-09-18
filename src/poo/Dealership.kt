@@ -11,4 +11,5 @@ fun main(){
     var client = ClientDealership("Giuliana", "Cassoni", "(11)99999-9999");
 
     dealership.registerSale(client, vehicle, 160000.0)
+    dealership.getSales();
 }

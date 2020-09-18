@@ -13,4 +13,9 @@ class Dealership(var name: String) {
         }
     }
 
+    fun getSales(){
+        sales.forEach { sale ->
+            println(sale.client.name + " " + sale.vehicle.model + " " + sale.value)
+        }
+    }
 }
