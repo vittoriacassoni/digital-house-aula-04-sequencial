@@ -13,6 +13,6 @@ abstract class BankAccount(var numberAccount:Int, protected var balance: Double)
     }
 
     override fun showData() {
-        println("Conta corrente: $numberAccount, Saldo: R$ $balance")
+        println("Conta: $numberAccount, Saldo: R$ $balance")
     }
 }
