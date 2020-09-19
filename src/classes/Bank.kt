@@ -16,7 +16,7 @@ class Bank(val name: String) : Printable{
     }
 
     fun getAccountByNumber(numberAccount: Int): BankAccount? {
-        return bankAccounts.find { it -> it.numberAccount == numberAccount };
+        return bankAccounts.find { it -> it.account == numberAccount };
     }
 
     override fun showData() {
