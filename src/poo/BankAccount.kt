@@ -26,7 +26,7 @@ fun main(){
 
     var bank = Bank("Banco Cassoni");
 
-    while(true){
+    loop@ while(true){
         println("----------------------------------------------------------")
         println("Bem vindo ao sistema do ${bank.name}, o que deseja fazer??")
         println("Digite 1 para criar uma conta")
@@ -79,7 +79,7 @@ fun main(){
                 var currentAccount = bank.getAccountByNumber(numberAccount)
 
                 if (currentAccount != null) {
-                    while (true) {
+                    loop1@ while (true) {
                         println("----------------------------------------------------------")
                         println("Digite 1 para depositar")
                         println("Digite 2 para sacar")
@@ -93,12 +93,12 @@ fun main(){
                             1 -> {
                                 println("Digite o valor que deseja depositar:")
                                 var value = readLine()!!.toDouble();
-                                if (currentAccount.deposit(value)) break
+                                if (currentAccount.deposit(value)) break@loop1
                             }
                             2 -> {
                                 println("Digite o valor que deseja sacar:")
                                 var value = readLine()!!.toDouble();
-                                if (currentAccount.withdraw(value)) break
+                                if (currentAccount.withdraw(value)) break@loop1
                             }
                             3 -> {
                                 println("Digite o valor que deseja transferir:")
@@ -112,13 +112,13 @@ fun main(){
                                     if (receivingAccount != null) {
                                         currentAccount.transfer(value, receivingAccount)
                                     }
-                                    break;
+                                    break@loop1;
                                 } else {
                                     println("Conta inexistente")
                                 }
                             }
                             4 -> currentAccount.showData()
-                            5 -> break
+                            5 -> break@loop1
                             else -> println("Digite uma opção válida")
                         }
                     }
@@ -142,7 +142,7 @@ fun main(){
                 println("Relatório ---------------------------------------------")
                 bank.showData();
             }
-            5 -> break;
+            5 -> break@loop;
             else -> println("Digite uma opção válida")
         }
     }
