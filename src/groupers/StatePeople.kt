@@ -12,15 +12,17 @@ fun main(){
 
     val people = listOf(people1, people2, people3, people4)
 
-    val peopleGroup = mutableMapOf<State, ArrayList<People>>()
+    val peopleGroup = mutableMapOf<String, MutableList<People>>()
 
     people.forEach{
-        if(!peopleGroup.containsKey(it.state)){
-            peopleGroup[it.state] = arrayListOf()
+        if(!peopleGroup.containsKey(it.state.initials)){
+            peopleGroup[it.state.initials] = arrayListOf()
         }
 
-        peopleGroup[it.state]?.add(it)
+        peopleGroup[it.state.initials]?.add(it)
     }
 
     println(peopleGroup)
+
+    println(people.groupBy { it.state.initials })
 }
