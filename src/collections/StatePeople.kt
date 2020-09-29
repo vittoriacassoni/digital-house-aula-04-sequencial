@@ -1,4 +1,4 @@
-package groupers
+package collections
 
 fun main(){
     var sp = State("SP", "São Paulo")
